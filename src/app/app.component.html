@@ -1,0 +1,37 @@
+<div>
+    <h3>Tutorial:</h3>
+    <ol>
+        <li>
+            Take a full Screenshot in game (on dual monitor alt + print helps)
+        </li>
+        <li>Focus this web page and press CTRL + V</li>
+        <li>
+            (Optional) If the selected area does not fit, start selection left
+            of the crafting icons and end right before the scrollbar
+        </li>
+    </ol>
+</div>
+
+<image-cropper
+    *ngIf="sourceImage"
+    [imageFile]="sourceImage"
+    format="jpeg"
+    [maintainAspectRatio]="false"
+    (imageCropped)="imageCropped($event)"
+    (cropperReady)="cropperReady($event)"
+    (loadImageFailed)="loadImageFailed()"
+    [cropper]="cropper"
+></image-cropper>
+
+<mat-progress-bar
+    *ngIf="progressMode"
+    [mode]="progressMode"
+    [value]="progressValue"
+></mat-progress-bar>
+
+<div *ngIf="this.crafts">
+    <h3>You've got the following crafts:</h3>
+    <ul>
+        <li *ngFor="let craft of crafts">{{ craft }}</li>
+    </ul>
+</div>
