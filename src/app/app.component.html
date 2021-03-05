@@ -12,6 +12,13 @@
     </ol>
 </div>
 
+<div *ngIf="this.crafts">
+    <h3>You've got the following crafts:</h3>
+    <ul>
+        <li *ngFor="let craft of crafts">{{ craft }}</li>
+    </ul>
+</div>
+
 <image-cropper
     *ngIf="sourceImage"
     [imageFile]="sourceImage"
@@ -28,10 +35,3 @@
     [mode]="progressMode"
     [value]="progressValue"
 ></mat-progress-bar>
-
-<div *ngIf="this.crafts">
-    <h3>You've got the following crafts:</h3>
-    <ul>
-        <li *ngFor="let craft of crafts">{{ craft }}</li>
-    </ul>
-</div>

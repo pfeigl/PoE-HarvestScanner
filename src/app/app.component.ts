@@ -199,8 +199,6 @@ export class AppComponent {
 
             this.progressMode = null;
 
-            this.sourceImage = null;
-
             // await ocrWorker.terminate();
         });
     }
